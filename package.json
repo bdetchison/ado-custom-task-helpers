@@ -11,10 +11,16 @@
     "url": "git+https://github.com/bdetchison/ado-custom-task-helpers.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Brandon Etchison",
   "license": "ISC",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "bugs": {
     "url": "https://github.com/bdetchison/ado-custom-task-helpers/issues"
   },
-  "homepage": "https://github.com/bdetchison/ado-custom-task-helpers#readme"
+  "homepage": "https://github.com/bdetchison/ado-custom-task-helpers#readme",
+  "dependencies": {
+    "azure-pipelines-task-lib": "^2.11.1"
+  }
 }
