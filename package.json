@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project.",
   "scripts": {
-    "test": " mocha tests/**/*tests.ts",
+    "test": " mocha tests/**/*tests.ts -r ts-node/register",
     "ctest": "tsc && nyc mocha tests/**/*tests.ts --timeout 15000",
     "build": "tsc"
   },
