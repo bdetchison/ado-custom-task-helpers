@@ -1,7 +1,7 @@
 import * as assert from "assert"
 import tl = require('azure-pipelines-task-lib/task');
 import { ImportMock } from 'ts-mock-imports';
-import Release from "../src/release";
+import Release from "../src/ReleaseEnvironmentVariables";
 
 describe("release", function () {
     const arbitraryAttemptNumber = "arbitraryAuthToken";
