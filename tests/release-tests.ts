@@ -11,6 +11,7 @@ describe("release", function () {
     const arbitraryReleaseId = "arbitraryReleaseId";
     const arbitraryReleaseName = "arbitraryReleaseName";
     const arbitraryReleaseWebUrl = "arbitraryReleaseWebUrl";
+    const arbitraryAccessToken = "arbitraryAccessToken";
     const arbitraryReleaseStartTime = new Date().toISOString().replace('T', ' ');
 
     beforeEach(function () {
@@ -23,6 +24,9 @@ describe("release", function () {
         getVariableStub.withArgs("Release.ReleaseName").returns(arbitraryReleaseName);
         getVariableStub.withArgs("Release.ReleaseWebURL").returns(arbitraryReleaseWebUrl);
         getVariableStub.withArgs("Release.Deployment.StartTime").returns(arbitraryReleaseStartTime);
+        
+        let getEndpointAuthorizationParameterStub = ImportMock.mockFunction(tl, "getEndpointAuthorizationParameter")
+        getEndpointAuthorizationParameterStub.withArgs("SystemVssConnection", "AccessToken", true).returns(arbitraryAccessToken)
     });
 
     afterEach(function () {
@@ -41,6 +45,7 @@ describe("release", function () {
             assert.strictEqual(release.name, arbitraryReleaseName, "invalid release name");
             assert.strictEqual(release.link, arbitraryReleaseWebUrl, "invalid release web url");
             assert.strictEqual(release.startTime, arbitraryReleaseStartTime);
+            assert.strictEqual(release.accessToken, arbitraryAccessToken);
         });
     })
 })
