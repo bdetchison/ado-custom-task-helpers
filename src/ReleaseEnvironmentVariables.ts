@@ -1,6 +1,6 @@
 import tl = require('azure-pipelines-task-lib/task');
 
-export default class ReleaseEnvironmentVariable {
+export default class ReleaseEnvironmentVariables {
     readonly attemptNumber: string;
     readonly definitionName: string;
     readonly environmentId: string;
