@@ -13,9 +13,6 @@
   "keywords": [],
   "author": "Brandon Etchison",
   "license": "ISC",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "bugs": {
     "url": "https://github.com/bdetchison/ado-custom-task-helpers/issues"
   },
