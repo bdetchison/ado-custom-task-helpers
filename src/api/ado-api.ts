@@ -6,7 +6,7 @@ export default class AdoApi {
 
     constructor(releaseConfiguration: ReleaseEnvironmentVariables) {
         this.releaseConfiguration = releaseConfiguration;
-    };
+    }
 
     private getAuthHeader() {
         const auth = ":" + this.releaseConfiguration.accessToken
@@ -16,7 +16,7 @@ export default class AdoApi {
         }
 
         return headers
-    };
+    }
 
     public async getSnapshot(apiVersion="6.0"): Promise<any> {
         let snapshotUrl = `${this.releaseConfiguration.adoServerUri}${this.releaseConfiguration.projectName}/_apis/release/releases/${this.releaseConfiguration.id}?api-version=${apiVersion}&approvalFilters=all`
