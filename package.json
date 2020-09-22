@@ -1,9 +1,9 @@
 {
   "name": "ado-custom-task-helpers",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project.",
-  "main": "./lib/src/ReleaseEnvironmentVariables.js",
-  "types": "./lib/src/ReleaseEnvironmentVariables.d.ts",
+  "main": "./lib/src/index.js",
+  "types": "./lib/src/index.d.ts",
   "scripts": {
     "test": " mocha tests/**/*tests.ts -r ts-node/register",
     "ctest": "tsc && nyc mocha tests/**/*tests.ts --timeout 15000",
