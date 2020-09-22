@@ -3,7 +3,6 @@ import tl = require('azure-pipelines-task-lib/task');
 import { ImportMock } from 'ts-mock-imports';
 import * as AdoApi from "../src/api/ado-api";
 import { Snapshot } from "../src/index";
-import { EnvironmentVariables } from "../src/index"
 import { ReleaseEnvironmentVariables } from "./fakes/release-environment-variables-fake";
 
 function deepEqual(object1: any, object2: any) {
