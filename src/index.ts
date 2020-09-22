@@ -1,2 +1,2 @@
-export   * as EnvironmentVariables from "./EnvironmentVariables"
-export * as Snapshot  from "./Snapshot"
+export * as EnvironmentVariables from "./EnvironmentVariables"
+export * as Snapshot from "./Snapshot"
