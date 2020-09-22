@@ -35,6 +35,10 @@ async function testFailureGetSnapshotFunction(releaseConfiguration: ReleaseEnvir
 describe("ADO-Api", function () {
     let releaseConfiguration = new ReleaseEnvironmentVariables();
 
+    this.afterAll(function () {
+        nock.restore();
+    });
+
     describe('When getSnapshot is called', function () {
         it('should call the API with valid auth Header', function (done) {
             const auth = ":" + releaseConfiguration.accessToken
