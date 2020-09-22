@@ -1,6 +1,6 @@
 import tl = require('azure-pipelines-task-lib/task');
 
-export default class ReleaseEnvironmentVariables {
+export class ReleaseEnvironmentVariables {
     readonly attemptNumber: string;
     readonly definitionName: string;
     readonly environmentId: number;
@@ -26,4 +26,8 @@ export default class ReleaseEnvironmentVariables {
         this.adoServerUri = tl.getVariable("SYSTEM_TEAMFOUNDATIONSERVERURI")!;
         this.accessToken = tl.getEndpointAuthorizationParameter("SystemVssConnection", "AccessToken", true)!;
     }
+}
+
+export function getReleaseEnvironmentVariables(): ReleaseEnvironmentVariables {
+    return new ReleaseEnvironmentVariables();
 }

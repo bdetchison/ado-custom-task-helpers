@@ -1,7 +1,7 @@
 import * as assert from "assert"
 import tl = require('azure-pipelines-task-lib/task');
 import { ImportMock } from 'ts-mock-imports';
-import Release from "../src/ReleaseEnvironmentVariables";
+import {ReleaseEnvironmentVariables} from "../src/EnvironmentVariables";
 
 describe("Release Environment Variables", function () {
     const arbitraryAttemptNumber = "arbitraryAuthToken";
@@ -35,7 +35,7 @@ describe("Release Environment Variables", function () {
 
     describe("when newed up", function () {
         it('populates populates all the properties from the Task Library calls', async () => {
-            let release = new Release();
+            let release = new ReleaseEnvironmentVariables();
 
             assert.strictEqual(release.attemptNumber, arbitraryAttemptNumber, "invalid attempt number");
             assert.strictEqual(release.definitionName, arbitraryDefinitionName, "invalid definition name");
