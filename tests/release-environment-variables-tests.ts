@@ -3,10 +3,10 @@ import tl = require('azure-pipelines-task-lib/task');
 import { ImportMock } from 'ts-mock-imports';
 import Release from "../src/ReleaseEnvironmentVariables";
 
-describe("release", function () {
+describe("Release Environment Variables", function () {
     const arbitraryAttemptNumber = "arbitraryAuthToken";
     const arbitraryDefinitionName = "arbitraryDefinitionName";
-    const arbitraryEnvironmentId = "arbitraryEnvironmentId";
+    const arbitraryEnvironmentId = "1";
     const arbitraryEnvironmentName = "arbitraryEnvironmentName";
     const arbitraryReleaseId = "arbitraryReleaseId";
     const arbitraryReleaseName = "arbitraryReleaseName";
@@ -39,7 +39,7 @@ describe("release", function () {
 
             assert.strictEqual(release.attemptNumber, arbitraryAttemptNumber, "invalid attempt number");
             assert.strictEqual(release.definitionName, arbitraryDefinitionName, "invalid definition name");
-            assert.strictEqual(release.environmentId, arbitraryEnvironmentId, "invalid environment id");
+            assert.strictEqual(release.environmentId, +arbitraryEnvironmentId, "invalid environment id");
             assert.strictEqual(release.environmentName, arbitraryEnvironmentName, "invalid environment name");
             assert.strictEqual(release.id, arbitraryReleaseId, "invalid release id");
             assert.strictEqual(release.name, arbitraryReleaseName, "invalid release name");
