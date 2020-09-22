@@ -1,27 +1,17 @@
 import AdoApi from "./api/ado-api";
-import ReleaseEnvironmentVariables from "./ReleaseEnvironmentVariables";
+import { ReleaseEnvironmentVariables } from "./EnvironmentVariables";
 
-export default class Snapshot {
-    readonly releaseApi: AdoApi;
-    protected releaseEnvironmentVariables: ReleaseEnvironmentVariables;
+export async function getReleaseSnapshot(releaseEnvironmentVariables: ReleaseEnvironmentVariables): Promise<any> {
+    let releaseApi = new AdoApi(releaseEnvironmentVariables);
+    return await releaseApi.getSnapshot();
+}
 
-    constructor(releaseEnvironmentVariables: ReleaseEnvironmentVariables) {
-        this.releaseApi = new AdoApi(releaseEnvironmentVariables);
-        this.releaseEnvironmentVariables = releaseEnvironmentVariables;
+export async function getCurrentEnvironment(releaseEnvironmentVariables: ReleaseEnvironmentVariables): Promise<any> {
+    let response = await getReleaseSnapshot(releaseEnvironmentVariables);
+
+    function getEnvironment(env: any) {
+        return env.id === releaseEnvironmentVariables.environmentId
     }
 
-    public async getReleaseSnapshot(): Promise<any> {
-        return await this.releaseApi.getSnapshot();
-    }
-
-    public async getCurrentEnvironment(): Promise<any> {
-        let response = await this.getReleaseSnapshot();
-        let envId = this.releaseEnvironmentVariables.environmentId
-
-        function getEnvironment(env: any) {
-            return env.id === envId
-        }
-
-        return response.environments.filter(getEnvironment)[0]
-    }
+    return response.environments.filter(getEnvironment)[0]
 }
