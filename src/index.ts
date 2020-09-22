@@ -1,2 +1,2 @@
-export { default as ReleaseEnvironmentVariables } from "./ReleaseEnvironmentVariables"
-export { default as Snapshot } from "./Snapshot"
+export * from "./ReleaseEnvironmentVariables"
+export * from "./Snapshot"
