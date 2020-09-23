@@ -1,6 +1,6 @@
 {
   "name": "ado-custom-task-helpers",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project.",
   "main": "./lib/src/index.js",
   "types": "./lib/src/index.d.ts",
