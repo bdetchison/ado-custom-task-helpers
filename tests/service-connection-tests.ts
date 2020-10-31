@@ -8,6 +8,13 @@ describe("Service Connection Tests", function () {
     const arbitraryServiceConnectionName = "arbitraryServiceConnectionName";
     const arbitraryUrl = "arbitraryUrl";
     const arbitraryEndpointId = "arbitraryEndpointId";
+    const arbitraryKey1 = "arbitraryKey1"
+    const arbitraryKey2 = "arbitraryKey2"
+    const arbitraryKey3 = "arbitraryKey3"
+    const arbitraryValue1 = "arbitraryValue1"
+    const arbitraryValue2 = "arbitraryValue2"
+    const arbitraryValue3 = "arbitraryValue3"
+    const keys = [arbitraryKey1, arbitraryKey2, arbitraryKey3];
     let getInputStub: SinonStub;
 
 
@@ -31,15 +38,7 @@ describe("Service Connection Tests", function () {
     })
 
     describe("when getEndpointAuthorizationParameter is called with a set of keys", function () {
-        it('it returns the values from the task library', async () => {
-            const arbitraryKey1 = "arbitraryKey1"
-            const arbitraryKey2 = "arbitraryKey2"
-            const arbitraryKey3 = "arbitraryKey3"
-            const arbitraryValue1 = "arbitraryValue1"
-            const arbitraryValue2 = "arbitraryValue2"
-            const arbitraryValue3 = "arbitraryValue3"
-            const keys = [arbitraryKey1, arbitraryKey2, arbitraryKey3];
-
+        it('it returns the values from the task library', async () => {   
             let getEndpointAuthorizationParameterStub = ImportMock.mockFunction(tl, "getEndpointAuthorizationParameter");
             getEndpointAuthorizationParameterStub.withArgs(arbitraryEndpointId, arbitraryKey1, false).returns(arbitraryValue1);
             getEndpointAuthorizationParameterStub.withArgs(arbitraryEndpointId, arbitraryKey2, false).returns(arbitraryValue2);
@@ -59,7 +58,6 @@ describe("Service Connection Tests", function () {
 
     describe("when getEndpointAuthorizationParameter is called with no keys", function () {
         it('it returns an empty array', async () => {
-
             let structureUnderTest = new ServiceConnection(arbitraryServiceConnectionName);
             let authParameters = structureUnderTest.getEndpointAuthorizationParameters([])
 
@@ -68,19 +66,11 @@ describe("Service Connection Tests", function () {
     })
 
     describe("when getEndpointDataParameter is called with a set of keys", function () {
-        it('it returns the values from the task library', async () => {
-            const arbitraryKey1 = "arbitraryKey1"
-            const arbitraryKey2 = "arbitraryKey2"
-            const arbitraryKey3 = "arbitraryKey3"
-            const arbitraryValue1 = "arbitraryValue1"
-            const arbitraryValue2 = "arbitraryValue2"
-            const arbitraryValue3 = "arbitraryValue3"
-            const keys = [arbitraryKey1, arbitraryKey2, arbitraryKey3];
-
-            let getEndpointAuthorizationParameterStub = ImportMock.mockFunction(tl, "getEndpointDataParameter");
-            getEndpointAuthorizationParameterStub.withArgs(arbitraryEndpointId, arbitraryKey1, false).returns(arbitraryValue1);
-            getEndpointAuthorizationParameterStub.withArgs(arbitraryEndpointId, arbitraryKey2, false).returns(arbitraryValue2);
-            getEndpointAuthorizationParameterStub.withArgs(arbitraryEndpointId, arbitraryKey3, false).returns(arbitraryValue3);
+        it('it returns the values from the task library', async () => {   
+            let getEndpointDataParameterStub = ImportMock.mockFunction(tl, "getEndpointDataParameter");
+            getEndpointDataParameterStub.withArgs(arbitraryEndpointId, arbitraryKey1, false).returns(arbitraryValue1);
+            getEndpointDataParameterStub.withArgs(arbitraryEndpointId, arbitraryKey2, false).returns(arbitraryValue2);
+            getEndpointDataParameterStub.withArgs(arbitraryEndpointId, arbitraryKey3, false).returns(arbitraryValue3);
 
             let structureUnderTest = new ServiceConnection(arbitraryServiceConnectionName);
             let dataParameters = structureUnderTest.getEndpointDataParameters(keys)
@@ -96,7 +86,6 @@ describe("Service Connection Tests", function () {
 
     describe("when getEndpointDataParameter is called with no keys", function () {
         it('it returns an empty array', async () => {
-
             let structureUnderTest = new ServiceConnection(arbitraryServiceConnectionName);
             let dataParameters = structureUnderTest.getEndpointDataParameters([])
 
