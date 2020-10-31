@@ -11,4 +11,6 @@ export class ReleaseEnvironmentVariables {
     readonly projectName = "arbitraryProjectName";
     readonly adoServerUri = "https://arbitrary.vsrm.visualstudio.com/";
     readonly pipelineStartTime ="2020-09-22 21:04:36-04:00";
+    readonly buildRepositoryName ="arbitraryBuildRepositoryName";
+    readonly buildSourceVersion ="arbitraryBuildSourceVersion";
 }

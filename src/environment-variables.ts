@@ -13,6 +13,8 @@ export class ReleaseEnvironmentVariables {
     readonly projectName: string;
     readonly adoServerUri: string;
     readonly pipelineStartTime: string;
+    readonly buildRepositoryName: string;
+    readonly buildSourceVersion: string;
 
     constructor() {
         this.attemptNumber = tl.getVariable("Release.AttemptNumber")!;
@@ -26,6 +28,8 @@ export class ReleaseEnvironmentVariables {
         this.projectName = tl.getVariable("SYSTEM_TEAMPROJECT")!;
         this.adoServerUri = tl.getVariable("SYSTEM_TEAMFOUNDATIONSERVERURI")!;
         this.pipelineStartTime = tl.getVariable("SYSTEM_PIPELINESTARTTIME")!;
+        this.buildRepositoryName = tl.getVariable("BUILD_REPOSITORY_NAME")!;
+        this.buildSourceVersion = tl.getVariable("BUILD_SOURCEVERSION")!;
         this.accessToken = tl.getEndpointAuthorizationParameter("SystemVssConnection", "AccessToken", true)!;
     }
 }
