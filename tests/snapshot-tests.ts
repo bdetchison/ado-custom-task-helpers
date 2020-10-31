@@ -2,7 +2,7 @@ import * as assert from "assert"
 import tl = require('azure-pipelines-task-lib/task');
 import { ImportMock } from 'ts-mock-imports';
 import * as AdoApi from "../src/api/ado-api";
-import { Snapshot } from "../src/index";
+import * as Snapshot from "../src/snapshot";
 import { ReleaseEnvironmentVariables } from "./fakes/release-environment-variables-fake";
 
 function deepEqual(object1: any, object2: any) {

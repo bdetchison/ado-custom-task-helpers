@@ -1,5 +1,5 @@
 import AdoApi from "./api/ado-api";
-import { ReleaseEnvironmentVariables } from "./EnvironmentVariables";
+import { ReleaseEnvironmentVariables } from "./environment-variables";
 
 export async function getReleaseSnapshot(releaseEnvironmentVariables: ReleaseEnvironmentVariables): Promise<any> {
     let releaseApi = new AdoApi(releaseEnvironmentVariables);

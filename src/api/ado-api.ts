@@ -1,5 +1,5 @@
 import needle = require('needle');
-import {ReleaseEnvironmentVariables} from '../EnvironmentVariables';
+import {ReleaseEnvironmentVariables} from '../environment-variables';
 
 export default class AdoApi {
     private releaseConfiguration: ReleaseEnvironmentVariables;
