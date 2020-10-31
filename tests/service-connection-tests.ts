@@ -2,7 +2,6 @@ import * as assert from "assert"
 import tl = require('azure-pipelines-task-lib/task');
 import { SinonStub } from "sinon";
 import { ImportMock } from 'ts-mock-imports';
-import { ReleaseEnvironmentVariables } from "../src/environment-variables";
 import { ServiceConnection } from "../src/service-connection";
 
 describe("Service Connection Tests", function () {
